@@ -12,7 +12,9 @@ This web application was built with React, and will allow the user, as a tap roo
 ![](src/assets/blueprints/TapRoomBlueprints.jpeg?raw=true)
 
 ## Difference in development from Angular
-
+* Styling is a bit more difficult
+* Creating and putting components onto a page seems to be faster
+* Passing data up seems to be easier
 ## Known Bugs
 
 * No Known Bugs
@@ -208,7 +210,7 @@ This web application was built with React, and will allow the user, as a tap roo
 
 
 ## Notes
-
+* > Can't seem to style the entire body or html
 
 ## Setup and Use
 

@@ -11,8 +11,8 @@ function Home() {
       `}</style>
       <div>
         <Header />
-          <NewKegControl />
-          <FilterKegsControl />
+        <NewKegControl />
+        <FilterKegsControl />
       </div>
     </div>
   );
