@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import KegListAll from './KegListAll';
 import KegListStout from './KegListStout';
 import KegListLager from './KegListLager';
@@ -9,6 +10,7 @@ class FilterKegsControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      allKegsList: [],
       value: 'all'
     };
   }
@@ -20,7 +22,7 @@ class FilterKegsControl extends React.Component {
   render() {
     let kegFilter = null;
     if (this.state.value === "all") {
-      kegFilter = <KegListAll/>
+      kegFilter = <KegListAll allKegsList={this.state.allKegsList}/>
     } else if (this.state.value === "stout") {
       kegFilter = <KegListStout/>
     } else if (this.state.value === "lager") {
@@ -61,5 +63,9 @@ class FilterKegsControl extends React.Component {
     );
   }
 }
+
+FilterKegsControl.propTypes = {
+  allKegsList: PropTypes.array
+};
 
 export default FilterKegsControl;
