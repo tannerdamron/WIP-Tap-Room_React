@@ -10,9 +10,6 @@ function App() {
         .app {
         background-image: url('https://images6.alphacoders.com/405/405948.jpg');
         background-repeat: no-repeat;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
         background-size: cover;
         position: relative;
         margin: -21px -8px 0 -8px;
