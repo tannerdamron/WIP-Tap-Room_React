@@ -43,7 +43,8 @@ class FilterKegsControl extends React.Component {
           }
           .filterSelect {
             margin-left: 55%;
-            margin-top: -30px;
+            margin-top: -7%;
+            position: absolute;
           }
         `}</style>
         <div className="filterSelect">

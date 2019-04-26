@@ -1,5 +1,6 @@
 import React from 'react';
 import Keg from './Keg';
+import newKegForm from './NewKegForm';
 
 let allKegs = [
   {
@@ -53,33 +54,40 @@ let allKegs = [
   }
 ];
 
-function KegListAll() {
-  return(
-    <div>
-      <style jsx>{`
-        .kegHeader {
-          color: goldenrod;
-          font-family: sans-serif;
-          font-size: 40px;
-          font-weight: lighter;
-          text-align: center;
-          text-shadow: 1px 1px black;
-        }
-      `}</style>
+class KegListAll extends React.Component {
+
+  handleAddNewKeg(newKeg) {
+    allKegs.push(newKeg);
+  }
+
+  render() {
+    return(
       <div>
-        <h2 className="kegHeader">Available Kegs</h2>
-          {allKegs.map((keg, index) => (
-            <Keg
-              brewer={keg.brewer}
-              price={keg.price}
-              abv={keg.abv}
-              pintsRemaining={keg.pintsRemaining}
-              style={keg.style}
-              key={index} />
-          ))}
+        <style jsx>{`
+          .kegHeader {
+            color: goldenrod;
+            font-family: sans-serif;
+            font-size: 40px;
+            font-weight: lighter;
+            text-align: center;
+            text-shadow: 1px 1px black;
+          }
+        `}</style>
+        <div>
+          <h2 className="kegHeader">Available Kegs</h2>
+            {allKegs.map((keg, index) => (
+              <Keg triggerParentUpdate={this.handleAddNewKeg}
+                brewer={keg.brewer}
+                price={keg.price}
+                abv={keg.abv}
+                pintsRemaining={keg.pintsRemaining}
+                style={keg.style}
+                key={index} />
+            ))}
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default KegListAll;
