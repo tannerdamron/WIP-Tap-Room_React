@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Home() {
+function Header() {
   return(
     <div>
       <style jsx>{`
@@ -9,13 +9,14 @@ function Home() {
           color: goldenrod;
           font-family: sans-serif;
           font-weight: lighter;
+          text-shadow: 1px 1px black;
         }
       `}</style>
       <div>
-        <h1 className="header">Tan's Tap Jam</h1>
+        <h1 className="header"><br/>Tan's Tap Jam</h1>
       </div>
     </div>
   );
 }
 
-export default Home;
+export default Header;

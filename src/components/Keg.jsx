@@ -11,6 +11,7 @@ function Keg(props) {
           font-family: sans-serif;
           font-weight: lighter;
           font-size: 16px;
+          text-shadow: 1px 1px black;
         }
       `}</style>
       <div className="keg">
@@ -19,7 +20,10 @@ function Keg(props) {
         <p>ABV: {props.abv}</p>
         <p>Pints Remaining: {props.pintsRemaining}</p>
         <p>Style of beer: {props.style}</p>
-        <hr/>
+        <button>Sell Pint</button>
+        <button>Sell Growler</button>
+        <button>Edit Keg</button>
+        <button>Tap this keg</button>
       </div>
     </div>
   );

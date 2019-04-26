@@ -1,7 +1,7 @@
 import React from 'react';
 import NewKegForm from './NewKegForm';
 
-class NewKeg extends React.Component{
+class NewKegControl extends React.Component{
 
   constructor(props) {
     super(props);
@@ -36,4 +36,4 @@ class NewKeg extends React.Component{
   }
 }
 
-export default NewKeg;
+export default NewKegControl;
