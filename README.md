@@ -249,7 +249,7 @@ This web application was built with React, and will allow the user, as a tap roo
 
 ## Contact
 
-| Tanner Damron | [tannerdamron](https://github.com/tannerdamron) | [tanner.mdamron@gmail.com](mailto:tanner.mdamron@gmail.com) |
+[tanner.mdamron@gmail.com](mailto:tanner.mdamron@gmail.com)
 
 If you have any feedback or concerns, please contact any of the contributors.
 
