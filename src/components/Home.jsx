@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header';
 import NewKegControl from './NewKegControl';
 import KegList from './KegList';
+import FilterKegsControl from './FilterKegsControl';
 
 function Home() {
   return(
@@ -11,6 +12,7 @@ function Home() {
       <div>
         <Header />
         <NewKegControl/>
+        <FilterKegsControl/>
         <KegList/>
       </div>
     </div>
