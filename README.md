@@ -1,6 +1,5 @@
-| [<img src="https://avatars0.githubusercontent.com/u/46458105?s=460&v=4" width=100 alt="GitHub identicon for author tannerdamron">](https://github.com/tannerdamron) |
-|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
-| [**tannerdamron**](https://github.com/tannerdamron) ||
+[<img src="https://avatars0.githubusercontent.com/u/46458105?s=460&v=4" width=100 alt="GitHub identicon for author tannerdamron">](https://github.com/tannerdamron)
+[**tannerdamron**](https://github.com/tannerdamron)
 
 ## | **Tap Room React** |
 
