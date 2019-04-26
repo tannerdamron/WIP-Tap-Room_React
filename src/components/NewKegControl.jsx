@@ -23,8 +23,11 @@ class NewKegControl extends React.Component{
       <div>
         <style jsx>{`
           .btn {
-            width: 100px;
-            background-color: red;
+            width: 130px;
+            height: 50px;
+            background-color: goldenrod;
+            border-radius: 10px;
+            margin-left: 25%;
           }
         `}</style>
         <div>

@@ -9,7 +9,7 @@ function Navbar() {
           display: grid;
           grid-template-columns: 1fr 1fr 1fr;
           align-content: center;
-          background-image: linear-gradient(white, skyblue);
+          background-image: linear-gradient(white, goldenrod);
         }
         .fixed {
           position: fixed;

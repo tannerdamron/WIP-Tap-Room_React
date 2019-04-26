@@ -12,7 +12,8 @@ function App() {
         background-image: url('https://images6.alphacoders.com/405/405948.jpg');
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: center center;
+        background-attachment: fixed;
+        position: relative;
         margin: -21px -8px 0 -8px;
         }
         .nav {

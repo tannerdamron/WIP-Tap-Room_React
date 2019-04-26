@@ -7,11 +7,12 @@ function Home() {
   return(
     <div>
       <style jsx>{`
+
       `}</style>
       <div>
         <Header />
-        <NewKegControl/>
-        <FilterKegsControl/>
+          <NewKegControl />
+          <FilterKegsControl />
       </div>
     </div>
   );

@@ -57,10 +57,17 @@ function KegListAll() {
   return(
     <div>
       <style jsx>{`
-
+        .kegHeader {
+          color: goldenrod;
+          font-family: sans-serif;
+          font-size: 40px;
+          font-weight: lighter;
+          text-align: center;
+          text-shadow: 1px 1px black;
+        }
       `}</style>
       <div>
-        <h2>Available Kegs</h2>
+        <h2 className="kegHeader">Available Kegs</h2>
           {allKegs.map((keg, index) => (
             <Keg
               brewer={keg.brewer}

@@ -1,31 +1,24 @@
 import React from 'react';
 import Keg from './Keg';
 
-let stoutKegs = [
+let lagerKegs = [
   {
-    brewer: "Ninkasi",
+    brewer: "Blue Dabadeedabadie",
+    price: "$4",
+    abv: "5.50%",
+    pintsRemaining: 124,
+    style: "Lager"
+  },
+  {
+    brewer: "Logger",
     price: "$6",
-    abv: "7.0%",
+    abv: "6.10%",
     pintsRemaining: 124,
-    style: "Stout"
-  },
-  {
-    brewer: "Tan",
-    price: "$7",
-    abv: "9.0%",
-    pintsRemaining: 124,
-    style: "Stout"
-  },
-  {
-    brewer: "The Jam",
-    price: "$25",
-    abv: "21.0%",
-    pintsRemaining: 124,
-    style: "Stout"
+    style: "Lager"
   }
 ];
 
-function KegListStout() {
+function KegListLager() {
   return (
     <div>
       <style jsx>{`
@@ -40,7 +33,7 @@ function KegListStout() {
       `}</style>
       <div>
         <h2 className="kegHeader">Available Kegs</h2>
-        {stoutKegs.map((keg, index) => (
+        {lagerKegs.map((keg, index) => (
           <Keg
             brewer={keg.brewer}
             price={keg.price}
@@ -54,4 +47,4 @@ function KegListStout() {
   );
 }
 
-export default KegListStout;
+export default KegListLager;

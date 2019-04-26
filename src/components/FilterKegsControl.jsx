@@ -1,49 +1,59 @@
 import React from 'react';
 import KegListAll from './KegListAll';
 import KegListStout from './KegListStout';
+import KegListLager from './KegListLager';
+import KegListIPA from './KegListIPA';
 
 class FilterKegsControl extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      allKegs: true,
-      stoutKegs: false
+      value: 'all'
     };
   }
 
-  handleKegListAll() {
-    this.setState({ allKegs: true });
-    this.setState({ stoutKegs: false })
-  }
-
-  handleKegListStout() {
-    this.setState({ stoutKegs: true });
-    this.setState({ allKegs: false })
+  handleFilterChange(event) {
+    this.setState({ value: event.target.value });
   }
 
   render() {
     let kegFilter = null;
-    if (this.state.allKegs === true) {
+    if (this.state.value === "all") {
       kegFilter = <KegListAll/>
-    } else if (this.state.stoutKegs === true) {
+    } else if (this.state.value === "stout") {
       kegFilter = <KegListStout/>
-    } else {
-      kegFilter =
-      <div>
-        <h1>Fail</h1>
-      </div>
+    } else if (this.state.value === "lager") {
+      kegFilter = <KegListLager/>
+    } else if (this.state.value === "ipa") {
+      kegFilter = <KegListIPA />
     }
     return (
       <div>
         <style jsx>{`
           .btn {
-            background-color: red;
+            background-image: linear-gradient(white, goldenrod);
+          }
+          .filterLabel {
+            text-align: center;
+            color: goldenrod;
+            font-family: sans-serif;
+            font-weight: lighter;
+            text-shadow: 1px 1px black;
+          }
+          .filterSelect {
+            margin-left: 55%;
+            margin-top: -30px;
           }
         `}</style>
-        <div>
-          <button className="btn" onClick={this.handleKegListAll.bind(this)}>All</button>
-          <button className="btn" onClick={this.handleKegListStout.bind(this)}>Stouts</button>
+        <div className="filterSelect">
+          <label className="filterLabel">Filter keg list by: </label>
+          <select value={this.state.value} onChange={this.handleFilterChange.bind(this)}>
+            <option value="all">All</option>
+            <option value="stout">Stout</option>
+            <option value="lager">Lager</option>
+            <option value="ipa">IPA</option>
+          </select>
         </div>
           {kegFilter}
       </div>
