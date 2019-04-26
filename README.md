@@ -1,7 +1,4 @@
-[<img src="https://avatars0.githubusercontent.com/u/46458105?s=460&v=4" width=100 alt="GitHub identicon for author tannerdamron">](https://github.com/tannerdamron)
-[**tannerdamron**](https://github.com/tannerdamron)
-
-## | **Tap Room React** |
+## **Tap Room React**
 
 #### By Tanner Damron
 ###### Initiated April 16th, 2019.
