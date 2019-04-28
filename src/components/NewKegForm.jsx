@@ -9,7 +9,7 @@ function NewKegForm(props) {
 
   function handleNewKegFormSubmission(e) {
     e.preventDefault();
-    props.onNewKegCreation({brewer: _brewer.value, price: _price.value, abv: _abv.value, style: _style.value});
+    props.onNewKegCreation({brewer: _brewer.value, price: _price.value, abv: _abv.value, pintsRemaining: 124, style: _style.value});
     _brewer.value = '';
     _price.value = '';
     _abv.value = '';

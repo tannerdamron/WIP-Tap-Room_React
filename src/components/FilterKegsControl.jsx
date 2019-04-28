@@ -22,7 +22,7 @@ class FilterKegsControl extends React.Component {
   render() {
     let kegFilter = null;
     if (this.state.value === "all") {
-      kegFilter = <KegListAll allKegsList={this.state.allKegsList}/>
+      kegFilter = <KegListAll allKegsList = {this.props.allKegsList}/>
     } else if (this.state.value === "stout") {
       kegFilter = <KegListStout/>
     } else if (this.state.value === "lager") {

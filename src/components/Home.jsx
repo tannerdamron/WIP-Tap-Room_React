@@ -62,12 +62,14 @@ class Home extends React.Component {
     this.state = {
       allKegsList: []
     };
+    this.handleAddingNewKegToList = this.handleAddingNewKegToList.bind(this);
   }
 
   handleAddingNewKegToList(newKeg) {
     let newAllKegsList = this.state.allKegsList.slice();
     newAllKegsList.push(newKeg);
     this.setState({allKegsList: newAllKegsList});
+    console.log(this.state);
   }
 
   render() {
@@ -78,9 +80,8 @@ class Home extends React.Component {
         `}</style>
         <div>
           <Header />
-          <NewKegControl />
-          <FilterKegsControl kegsList={this.state.allKegsList}
-          onNewKegCreation={this.handleAddingNewKegToList.bind(this)} />} />
+          <NewKegControl onNewKegCreation={this.handleAddingNewKegToList}/>
+          <FilterKegsControl allKegsList={this.state.allKegsList} />
         </div>
       </div>
     );
