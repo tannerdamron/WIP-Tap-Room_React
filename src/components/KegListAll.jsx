@@ -1,10 +1,10 @@
-import React from 'react';
-import Keg from './Keg';
-import PropTypes from 'prop-types';
+import React from "react";
+import Keg from "./Keg";
+import PropTypes from "prop-types";
 
-function KegListAll(props){
+function KegListAll(props) {
 
-  return(
+  return (
     <div>
       <style jsx>{`
         .kegHeader {
@@ -18,15 +18,16 @@ function KegListAll(props){
       `}</style>
       <div>
         <h2 className="kegHeader">Available Kegs</h2>
-          {props.allKegsList.map((keg, index) => (
-            <Keg
-              brewer={keg.brewer}
-              price={keg.price}
-              abv={keg.abv}
-              pintsRemaining={keg.pintsRemaining}
-              style={keg.style}
-              key={index} />
-          ))}
+        {props.allKegsList.map((keg) => (
+          <Keg
+            brewer={keg.brewer}
+            price={keg.price}
+            abv={keg.abv}
+            pintsRemaining={keg.pintsRemaining}
+            style={keg.style}
+            key={keg.id}
+          />
+        ))}
       </div>
     </div>
   );

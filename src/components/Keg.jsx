@@ -1,32 +1,62 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Keg(props) {
-  return(
-    <div>
-      <style jsx>{`
-        .keg {
-          color: goldenrod;
-          text-align: center;
-          font-family: sans-serif;
-          font-weight: lighter;
-          font-size: 16px;
-          text-shadow: 1px 1px black;
-        }
-      `}</style>
-      <div className="keg">
-        <p>Brewer: {props.brewer}</p>
-        <p>Price: {props.price}</p>
-        <p>ABV: {props.abv}</p>
-        <p>Pints Remaining: {props.pintsRemaining}</p>
-        <p>Style of beer: {props.style}</p>
-        <button>Sell Pint</button>
-        <button>Sell Growler</button>
-        <button>Edit Keg</button>
-        <button>Tap this keg</button>
+class Keg extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      pints: props.pintsRemaining
+    }
+  }
+
+  sellPint() {
+    this.setState({ pints: this.state.pints-=1});
+    if (this.state.pints <= 0) {
+      alert("Keg empty");
+      this.state.pints = 0;
+    }
+  }
+
+  sellGrowler() {
+    this.setState({ pints: this.state.pints -= 2 });
+    if (this.state.pints <= 0) {
+      alert("Keg empty");
+      this.state.pints = 0;
+    }
+  }
+
+  tapkeg() {
+    this.setState({ pints: this.state.pints = 124 });
+  }
+
+  render() {
+    return(
+      <div>
+        <style jsx>{`
+          .keg {
+            color: goldenrod;
+            text-align: center;
+            font-family: sans-serif;
+            font-weight: lighter;
+            font-size: 16px;
+            text-shadow: 1px 1px black;
+          }
+        `}</style>
+        <div className="keg">
+          <p>Brewer: {this.props.brewer}</p>
+          <p>Price: {this.props.price}</p>
+          <p>ABV: {this.props.abv}</p>
+          <p>Pints Remaining: {this.state.pints}</p>
+          <p>Style of beer: {this.props.style}</p>
+          <button onClick={this.sellPint.bind(this)}>Sell Pint</button>
+          <button onClick={this.sellGrowler.bind(this)}>Sell Growler</button>
+          <button>Edit Keg</button>
+          <button onClick={this.tapkeg.bind(this)}>Tap this keg</button>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 Keg.propTypes = {
