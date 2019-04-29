@@ -38,21 +38,29 @@ class Keg extends React.Component {
             color: goldenrod;
             text-align: center;
             font-family: sans-serif;
-            font-weight: lighter;
-            font-size: 16px;
+            font-size: 20px;
             text-shadow: 1px 1px black;
+            background-color: rgba(0,0,0,.7);
+            width: 300px;
+            margin-left: 25%;
+            margin-bottom: 10px;
+            border-radius: 5%;
+            z-index: 2;
+            padding: .1px;
           }
         `}</style>
         <div className="keg">
-          <p>Brewer: {this.props.brewer}</p>
-          <p>Price: {this.props.price}</p>
-          <p>ABV: {this.props.abv}</p>
-          <p>Pints Remaining: {this.state.pints}</p>
-          <p>Style of beer: {this.props.style}</p>
-          <button onClick={this.sellPint.bind(this)}>Sell Pint</button>
-          <button onClick={this.sellGrowler.bind(this)}>Sell Growler</button>
-          <button>Edit Keg</button>
-          <button onClick={this.tapkeg.bind(this)}>Tap this keg</button>
+          <div>
+            <p>Brewer: {this.props.brewer}</p>
+            <p>Price: {this.props.price}</p>
+            <p>ABV: {this.props.abv}</p>
+            <p>Pints Remaining: {this.state.pints}</p>
+            <p>Style of beer: {this.props.style}</p>
+            <button onClick={this.sellPint.bind(this)}>Sell Pint</button>
+            <button onClick={this.sellGrowler.bind(this)}>Sell Growler</button>
+            <button>Edit Keg</button>
+            <button onClick={this.tapkeg.bind(this)}>Tap this keg</button>
+          </div>
         </div>
       </div>
     );

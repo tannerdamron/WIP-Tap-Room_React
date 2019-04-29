@@ -82,7 +82,7 @@ class Home extends React.Component {
     return(
       <div>
         <style jsx>{`
-
+        
         `}</style>
         <div>
           <Header />

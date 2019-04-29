@@ -7,6 +7,10 @@ function KegListAll(props) {
   return (
     <div>
       <style jsx>{`
+        .list {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
         .kegHeader {
           color: goldenrod;
           font-family: sans-serif;
@@ -16,8 +20,8 @@ function KegListAll(props) {
           text-shadow: 1px 1px black;
         }
       `}</style>
-      <div>
-        <h2 className="kegHeader">Available Kegs</h2>
+      <h2 className="kegHeader">Available Kegs</h2>
+      <div className="list">
         {props.allKegsList.map((keg) => (
           <Keg
             brewer={keg.brewer}

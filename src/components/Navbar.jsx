@@ -14,6 +14,7 @@ function Navbar() {
         .fixed {
           position: fixed;
           width: 100%;
+          z-index: 2;
         }
         button {
           background-color: transparent;
