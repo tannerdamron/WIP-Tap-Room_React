@@ -48,6 +48,10 @@ class Keg extends React.Component {
             z-index: 2;
             padding: .1px;
           }
+          button {
+            background-image: url('../assets/images/pint.png');
+
+          }
         `}</style>
         <div className="keg">
           <div>
