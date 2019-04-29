@@ -29,6 +29,7 @@ function KegListAll(props) {
             abv={keg.abv}
             pintsRemaining={keg.pintsRemaining}
             style={keg.style}
+            kegId={keg.id}
             key={keg.id}
           />
         ))}
@@ -39,7 +40,7 @@ function KegListAll(props) {
 
 KegListAll.propTypes = {
   allKegsList: PropTypes.array,
-  onEditKegCreation: PropTypes.func
+  onEditKeg: PropTypes.func
 };
 
 export default KegListAll;

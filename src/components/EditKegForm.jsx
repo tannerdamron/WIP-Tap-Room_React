@@ -9,7 +9,7 @@ function EditKegForm(props) {
 
   function handleEditKegFormSubmission(e) {
     e.preventDefault();
-    props.onEditKegCreation({ brewer: _brewer.value, price: _price.value, abv: _abv.value, pintsRemaining: 124, style: _style.value, id: this.id });
+    props.onEditKegCreation({ brewer: _brewer.value, price: _price.value, abv: _abv.value, pintsRemaining: 124, style: _style.value, id: props.kegId });
     _brewer.value = '';
     _price.value = '';
     _abv.value = '';
@@ -58,7 +58,8 @@ function EditKegForm(props) {
 }
 
 EditKegForm.propTypes = {
-  onEditKegCreation: PropTypes.func
+  onEditKegCreation: PropTypes.func,
+  kegId: PropTypes.number.isRequired
 };
 
 export default EditKegForm;

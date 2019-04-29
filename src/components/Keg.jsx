@@ -40,6 +40,7 @@ class Keg extends React.Component {
     let editKegForm = null;
     if (this.state.showKegEditForm === true) {
       editKegForm = <EditKegForm
+        kegId = {this.props.kegId}
         onEditKegCreation={this.props.onEditKegCreation}
       />;
     }
@@ -89,6 +90,7 @@ Keg.propTypes = {
   abv: PropTypes.string.isRequired,
   pintsRemaining: PropTypes.number.isRequired,
   style: PropTypes.string.isRequired,
+  kegId: PropTypes.number.isRequired,
   onEditKegCreation: PropTypes.func
 };
 
