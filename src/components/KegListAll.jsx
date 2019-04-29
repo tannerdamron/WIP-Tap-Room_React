@@ -1,9 +1,8 @@
-import React from "react";
-import Keg from "./Keg";
-import PropTypes from "prop-types";
+import React from 'react';
+import Keg from './Keg';
+import PropTypes from 'prop-types';
 
 function KegListAll(props) {
-
   return (
     <div>
       <style jsx>{`
@@ -24,6 +23,7 @@ function KegListAll(props) {
       <div className="list">
         {props.allKegsList.map((keg) => (
           <Keg
+            onEditKegCreation={props.onEditKeg}
             brewer={keg.brewer}
             price={keg.price}
             abv={keg.abv}
@@ -38,7 +38,8 @@ function KegListAll(props) {
 }
 
 KegListAll.propTypes = {
-  allKegsList: PropTypes.array
+  allKegsList: PropTypes.array,
+  onEditKegCreation: PropTypes.func
 };
 
 export default KegListAll;

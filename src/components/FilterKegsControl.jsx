@@ -10,7 +10,6 @@ class FilterKegsControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      allKegsList: [],
       value: 'all'
     };
   }
@@ -21,14 +20,17 @@ class FilterKegsControl extends React.Component {
 
   render() {
     let kegFilter = null;
-    if (this.state.value === "all") {
-      kegFilter = <KegListAll allKegsList = {this.props.allKegsList}/>
-    } else if (this.state.value === "stout") {
-      kegFilter = <KegListStout/>
-    } else if (this.state.value === "lager") {
-      kegFilter = <KegListLager/>
-    } else if (this.state.value === "ipa") {
-      kegFilter = <KegListIPA />
+    if (this.state.value === 'all') {
+      kegFilter = <KegListAll
+        onEditKeg={this.props.onEditKeg}
+        allKegsList={this.props.allKegsList}
+      />;
+    } else if (this.state.value === 'stout') {
+      kegFilter = <KegListStout/>;
+    } else if (this.state.value === 'lager') {
+      kegFilter = <KegListLager/>;
+    } else if (this.state.value === 'ipa') {
+      kegFilter = <KegListIPA />;
     }
     return (
       <div>
@@ -42,6 +44,7 @@ class FilterKegsControl extends React.Component {
             font-family: sans-serif;
             font-weight: lighter;
             text-shadow: 1px 1px black;
+            font-size: 20px;
           }
           .filterSelect {
             margin-left: 50%;
@@ -57,14 +60,15 @@ class FilterKegsControl extends React.Component {
             <option value="ipa">IPA</option>
           </select>
         </div>
-          {kegFilter}
+        {kegFilter}
       </div>
     );
   }
 }
 
 FilterKegsControl.propTypes = {
-  allKegsList: PropTypes.array
+  allKegsList: PropTypes.array,
+  onEditKeg: PropTypes.func
 };
 
 export default FilterKegsControl;

@@ -3,18 +3,18 @@ import Keg from './Keg';
 
 let lagerKegs = [
   {
-    brewer: "Blue Dabadeedabadie",
-    price: "$4",
-    abv: "5.50%",
+    brewer: 'Blue Dabadeedabadie',
+    price: '$4',
+    abv: '5.50%',
     pintsRemaining: 124,
-    style: "Lager"
+    style: 'Lager'
   },
   {
-    brewer: "Logger",
-    price: "$6",
-    abv: "6.10%",
+    brewer: 'Logger',
+    price: '$6',
+    abv: '6.10%',
     pintsRemaining: 124,
-    style: "Lager"
+    style: 'Lager'
   }
 ];
 
@@ -22,6 +22,10 @@ function KegListLager() {
   return (
     <div>
       <style jsx>{`
+        .list {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+        }
         .kegHeader {
           color: goldenrod;
           font-family: sans-serif;
@@ -31,8 +35,8 @@ function KegListLager() {
           text-shadow: 1px 1px black;
         }
       `}</style>
-      <div>
-        <h2 className="kegHeader">Available Kegs</h2>
+      <h2 className="kegHeader">Available Kegs</h2>
+      <div className="list">
         {lagerKegs.map((keg, index) => (
           <Keg
             brewer={keg.brewer}

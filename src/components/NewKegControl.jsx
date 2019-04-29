@@ -7,18 +7,22 @@ class NewKegControl extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      showNewKegForm: false
+      showNewKegForm: this.props.showNewKegForm
     };
   }
 
   handleShowNewKegForm() {
-    this.setState({ showNewKegForm: true })
+    this.setState({ showNewKegForm: true });
   }
 
   render() {
     let newKegForm = null;
     if (this.state.showNewKegForm === true) {
-      newKegForm = <NewKegForm onNewKegCreation={this.props.onNewKegCreation}/>
+      newKegForm = <NewKegForm
+        onNewKegCreation={this.props.onNewKegCreation}
+      />;
+    } else if (this.state.showNewKegForm === false) {
+      newKegForm = null;
     }
     return (
       <div>
@@ -41,7 +45,8 @@ class NewKegControl extends React.Component{
 }
 
 NewKegControl.propTypes = {
-  onNewKegCreation: PropTypes.func
+  onNewKegCreation: PropTypes.func,
+  showNewKegForm: PropTypes.bool
 };
 
 export default NewKegControl;

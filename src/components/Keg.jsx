@@ -1,36 +1,48 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import EditKegForm from './EditKegForm';
 
 class Keg extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      pints: props.pintsRemaining
-    }
+      pints: props.pintsRemaining,
+      showKegEditForm: false
+    };
   }
 
   sellPint() {
-    this.setState({ pints: this.state.pints-=1});
+    this.setState({ pints: this.state.pints-1});
     if (this.state.pints <= 0) {
-      alert("Keg empty");
-      this.state.pints = 0;
+      alert('Keg empty');
+      this.setState({ pints: 0});
     }
   }
 
   sellGrowler() {
-    this.setState({ pints: this.state.pints -= 2 });
+    this.setState({ pints: this.state.pints-2 });
     if (this.state.pints <= 0) {
-      alert("Keg empty");
-      this.state.pints = 0;
+      alert('Keg empty');
+      this.setState({ pints: 0 });
     }
   }
 
   tapkeg() {
-    this.setState({ pints: this.state.pints = 124 });
+    this.setState({ pints: 124 });
+  }
+
+  showKegEditForm() {
+    this.setState({ showKegEditForm: true });
   }
 
   render() {
+    let editKegForm = null;
+    if (this.state.showKegEditForm === true) {
+      editKegForm = <EditKegForm
+        onEditKegCreation={this.props.onEditKegCreation}
+      />;
+    }
     return(
       <div>
         <style jsx>{`
@@ -50,7 +62,6 @@ class Keg extends React.Component {
           }
           button {
             background-image: url('../assets/images/pint.png');
-
           }
         `}</style>
         <div className="keg">
@@ -62,8 +73,9 @@ class Keg extends React.Component {
             <p>Style of beer: {this.props.style}</p>
             <button onClick={this.sellPint.bind(this)}>Sell Pint</button>
             <button onClick={this.sellGrowler.bind(this)}>Sell Growler</button>
-            <button>Edit Keg</button>
+            <button onClick={this.showKegEditForm.bind(this)}>Edit Keg</button>
             <button onClick={this.tapkeg.bind(this)}>Tap this keg</button>
+            {editKegForm}
           </div>
         </div>
       </div>
@@ -76,7 +88,8 @@ Keg.propTypes = {
   price: PropTypes.string.isRequired,
   abv: PropTypes.string.isRequired,
   pintsRemaining: PropTypes.number.isRequired,
-  style: PropTypes.string.isRequired
-}
+  style: PropTypes.string.isRequired,
+  onEditKegCreation: PropTypes.func
+};
 
 export default Keg;

@@ -22,10 +22,10 @@ function App() {
       <div className="app">
         <Navbar />
         <Switch>
-        <Route exact path='/' component={Home} />
-        <Route path='/contact' component={Contact} />
-        <Route path='/about' component={About} />
-        <Route component={Error404} />
+          <Route exact path='/' component={Home} />
+          <Route path='/contact' component={Contact} />
+          <Route path='/about' component={About} />
+          <Route component={Error404} />
         </Switch>
       </div>
     </div>

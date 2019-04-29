@@ -4,8 +4,14 @@
   "description": "A Tap Room application where the user can see a list of kegs available, how many pints are left in each keg, sell pints or growlers, edit each keg, add a new keg, tap a keg that already exists, and filter by type or price\"",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint src/** src/**/**; exit 0",
+    "lint-fix": "eslint src/** src/**/** --fix; exit 0",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tannerdamron/-WIP-Tap-Room_React"
   },
   "author": "Tanner Damron",
   "license": "ISC",

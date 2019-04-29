@@ -3,25 +3,25 @@ import Keg from './Keg';
 
 let stoutKegs = [
   {
-    brewer: "Ninkasi",
-    price: "$6",
-    abv: "7.0%",
+    brewer: 'Ninkasi',
+    price: '$6',
+    abv: '7.0%',
     pintsRemaining: 124,
-    style: "Stout"
+    style: 'Stout'
   },
   {
-    brewer: "Tan",
-    price: "$7",
-    abv: "9.0%",
+    brewer: 'Tan',
+    price: '$7',
+    abv: '9.0%',
     pintsRemaining: 124,
-    style: "Stout"
+    style: 'Stout'
   },
   {
-    brewer: "The Jam",
-    price: "$25",
-    abv: "21.0%",
+    brewer: 'The Jam',
+    price: '$25',
+    abv: '21.0%',
     pintsRemaining: 124,
-    style: "Stout"
+    style: 'Stout'
   }
 ];
 
@@ -29,6 +29,10 @@ function KegListStout() {
   return (
     <div>
       <style jsx>{`
+        .list {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+        }
         .kegHeader {
           color: goldenrod;
           font-family: sans-serif;
@@ -38,8 +42,8 @@ function KegListStout() {
           text-shadow: 1px 1px black;
         }
       `}</style>
-      <div>
-        <h2 className="kegHeader">Available Kegs</h2>
+      <h2 className="kegHeader">Available Kegs</h2>
+      <div className="list">
         {stoutKegs.map((keg, index) => (
           <Keg
             brewer={keg.brewer}

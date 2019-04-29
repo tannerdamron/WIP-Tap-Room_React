@@ -3,18 +3,18 @@ import Keg from './Keg';
 
 let ipaKegs = [
   {
-    brewer: "Space Dust IPA",
-    price: "$5",
-    abv: "8.20%",
+    brewer: 'Space Dust IPA',
+    price: '$5',
+    abv: '8.20%',
     pintsRemaining: 124,
-    style: "IPA"
+    style: 'IPA'
   },
   {
-    brewer: "Froth God",
-    price: "$5",
-    abv: "5.50%",
+    brewer: 'Froth God',
+    price: '$5',
+    abv: '5.50%',
     pintsRemaining: 124,
-    style: "IPA"
+    style: 'IPA'
   }
 ];
 
@@ -22,6 +22,10 @@ function KegListIPA() {
   return (
     <div>
       <style jsx>{`
+        .list {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+        }
         .kegHeader {
           color: goldenrod;
           font-family: sans-serif;
@@ -31,8 +35,8 @@ function KegListIPA() {
           text-shadow: 1px 1px black;
         }
       `}</style>
-      <div>
-        <h2 className="kegHeader">Available Kegs</h2>
+      <h2 className="kegHeader">Available Kegs</h2>
+      <div className="list">
         {ipaKegs.map((keg, index) => (
           <Keg
             brewer={keg.brewer}
