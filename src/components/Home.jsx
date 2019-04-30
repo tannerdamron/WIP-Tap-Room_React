@@ -3,14 +3,14 @@ import Header from './Header';
 import NewKegControl from './NewKegControl';
 import FilterKegsControl from './FilterKegsControl';
 
-let allKegs = [
+const allKegs = [
   {
     brewer: 'Ninkasi',
     price: '6',
     abv: '7.0%',
     pintsRemaining: 124,
     style: 'Stout',
-    id: 1
+    id: 1,
   },
   {
     brewer: 'Tan',
@@ -18,7 +18,7 @@ let allKegs = [
     abv: '9.0%',
     pintsRemaining: 123,
     style: 'Stout',
-    id: 2
+    id: 2,
   },
   {
     brewer: 'Space Dust IPA',
@@ -26,7 +26,7 @@ let allKegs = [
     abv: '8.20%',
     pintsRemaining: 122,
     style: 'IPA',
-    id: 3
+    id: 3,
   },
   {
     brewer: 'Blue Dabadeedabadie',
@@ -34,7 +34,7 @@ let allKegs = [
     abv: '5.50%',
     pintsRemaining: 124,
     style: 'Lager',
-    id: 4
+    id: 4,
   },
   {
     brewer: 'The Jam',
@@ -42,7 +42,7 @@ let allKegs = [
     abv: '21.0%',
     pintsRemaining: 124,
     style: 'Stout',
-    id: 5
+    id: 5,
   },
   {
     brewer: 'Froth God',
@@ -50,7 +50,7 @@ let allKegs = [
     abv: '5.50%',
     pintsRemaining: 124,
     style: 'IPA',
-    id: 6
+    id: 6,
   },
   {
     brewer: 'Logger',
@@ -58,28 +58,29 @@ let allKegs = [
     abv: '6.10%',
     pintsRemaining: 124,
     style: 'Lager',
-    id: 7
-  }
+    id: 7,
+  },
 ];
 
 class Home extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
-      allKegsList: allKegs
+      allKegsList: allKegs,
     };
   }
 
   handleAddingNewKegToList(newKeg) {
-    let newAllKegsList = this.state.allKegsList.slice();
+    const { allKegsList } = this.state;
+    const newAllKegsList = allKegsList.slice();
     newAllKegsList.push(newKeg);
     this.setState({ allKegsList: newAllKegsList });
   }
 
   handleEditKeg(currentKeg) {
-    let newAllKegsList = this.state.allKegsList.slice();
-    for (let i = 0; i < newAllKegsList.length; i++) {
+    const { allKegsList } = this.state;
+    const newAllKegsList = allKegsList.slice();
+    for (let i = 0; i < newAllKegsList.length; i += 1) {
       if (currentKeg.id === newAllKegsList[i].id) {
         newAllKegsList[i] = currentKeg;
       }
@@ -88,19 +89,22 @@ class Home extends React.Component {
   }
 
   render() {
-    return(
+    const { allKegsList } = this.state;
+    return (
       <div>
-        <style jsx>{`
+        <style jsx>
+          {`
 
-        `}</style>
+          `}
+        </style>
         <div>
           <Header />
           <NewKegControl
-            onNewKegCreation={this.handleAddingNewKegToList.bind(this)}
+            onNewKegCreation={e => this.handleAddingNewKegToList(e)}
           />
           <FilterKegsControl
-            allKegsList={this.state.allKegsList}
-            onEditKeg={this.handleEditKeg.bind(this)}
+            allKegsList={allKegsList}
+            onEditKeg={e => this.handleEditKeg(e)}
           />
         </div>
       </div>

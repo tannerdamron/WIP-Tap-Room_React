@@ -1,11 +1,13 @@
 import React from 'react';
-import Keg from './Keg';
 import PropTypes from 'prop-types';
+import Keg from './Keg';
 
 function KegListAll(props) {
+  const { allKegsList, onEditKeg } = props;
   return (
     <div>
-      <style jsx>{`
+      <style jsx>
+        {`
         .list {
           display: grid;
           grid-template-columns: 1fr 1fr 1fr;
@@ -18,12 +20,13 @@ function KegListAll(props) {
           text-align: center;
           text-shadow: 1px 1px black;
         }
-      `}</style>
+      `}
+      </style>
       <h2 className="kegHeader">Available Kegs</h2>
       <div className="list">
-        {props.allKegsList.map((keg) => (
+        {allKegsList.map(keg => (
           <Keg
-            onEditKegCreation={props.onEditKeg}
+            onEditKegCreation={onEditKeg}
             brewer={keg.brewer}
             price={keg.price}
             abv={keg.abv}
@@ -39,8 +42,8 @@ function KegListAll(props) {
 }
 
 KegListAll.propTypes = {
-  allKegsList: PropTypes.array,
-  onEditKeg: PropTypes.func
+  allKegsList: PropTypes.instanceOf(Array).isRequired,
+  onEditKeg: PropTypes.func.isRequired,
 };
 
 export default KegListAll;

@@ -2,9 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Navbar() {
-  return(
+  return (
     <div>
-      <style jsx>{`
+      <style jsx>
+        {`
         .nav {
           display: grid;
           grid-template-columns: 1fr 1fr 1fr;
@@ -28,17 +29,18 @@ function Navbar() {
           cursor: pointer;
           color: cornflowerblue;
         }
-      `}</style>
+      `}
+      </style>
       <div className="fixed">
         <nav className="nav">
           <div>
-            <Link to='/'><button>Home</button></Link>
+            <Link to="/"><button type="button">Home</button></Link>
           </div>
           <div>
-            <Link to='/about'><button>About</button></Link>
+            <Link to="/about"><button type="button">About</button></Link>
           </div>
           <div>
-            <Link to='/contact'><button>Contact</button></Link>
+            <Link to="/contact"><button type="button">Contact</button></Link>
           </div>
         </nav>
       </div>

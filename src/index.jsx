@@ -1,9 +1,8 @@
-/* eslint-disable no-undef */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
 import { AppContainer } from 'react-hot-loader';
 import { HashRouter } from 'react-router-dom';
+import App from './components/App';
 
 const render = (Component) => {
   ReactDOM.render(
@@ -12,7 +11,7 @@ const render = (Component) => {
         <Component />
       </HashRouter>
     </AppContainer>,
-    document.getElementById('react-app-root')
+    document.getElementById('react-app-root'),
   );
 };
 
@@ -23,4 +22,3 @@ if (module.hot) {
     render(App);
   });
 }
-

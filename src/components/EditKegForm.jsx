@@ -1,29 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function EditKegForm(props) {
-  let _brewer = null;
-  let _price = null;
-  let _abv = null;
-  let _style = null;
+const EditKegForm = ({ onHideEditKegForm, onEditKegCreation, kegId }) => {
+  let brewer = null;
+  let price = null;
+  let abv = null;
+  let style = null;
 
   function handleEditKegFormSubmission(e) {
     e.preventDefault();
-    props.onEditKegCreation({ brewer: _brewer.value, price: _price.value, abv: _abv.value, pintsRemaining: 124, style: _style.value, id: props.kegId });
-    _brewer.value = '';
-    _price.value = '';
-    _abv.value = '';
-    _style.value = '';
+    onEditKegCreation({
+      brewer: brewer.value,
+      price: price.value,
+      abv: abv.value,
+      pintsRemaining: 124,
+      style: style.value,
+      id: kegId,
+    });
+    brewer.value = '';
+    price.value = '';
+    abv.value = '';
+    style.value = '';
   }
 
   return (
     <div>
-      <style jsx>{`
+      <style jsx>
+        {`
         .editKegForm {
           width: 200px;
           margin-left: 19%;
         }
-      `}</style>
+      `}
+      </style>
       <div>
         <form className="editKegForm" onSubmit={handleEditKegFormSubmission}>
           <input
@@ -31,37 +40,41 @@ function EditKegForm(props) {
             id="brewer"
             placeholder="Brewer"
             required
-            ref={(input) => { _brewer = input; }} />
+            ref={(input) => { brewer = input; }}
+          />
           <input
             type="number"
             id="price"
             placeholder="Price per pint"
             required
-            ref={(input) => { _price = input; }} />
+            ref={(input) => { price = input; }}
+          />
           <input
             type="text"
             id="abv"
             placeholder="ABV"
             required
-            ref={(input) => { _abv = input; }} />
+            ref={(input) => { abv = input; }}
+          />
           <input
             type="text"
             id="style"
             placeholder="Style of beer"
             required
-            ref={(input) => { _style = input; }} />
+            ref={(input) => { style = input; }}
+          />
           <button type="submit">Edit Keg</button>
-          <button onClick={props.onHideEditKegForm}>Hide</button>
+          <button type="button" onClick={onHideEditKegForm}>Hide</button>
         </form>
       </div>
     </div>
   );
-}
+};
 
 EditKegForm.propTypes = {
-  onEditKegCreation: PropTypes.func,
+  onEditKegCreation: PropTypes.func.isRequired,
   kegId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  onHideEditKegForm: PropTypes.func
+  onHideEditKegForm: PropTypes.func.isRequired,
 };
 
 export default EditKegForm;

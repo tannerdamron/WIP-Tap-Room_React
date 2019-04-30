@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import NewKegForm from './NewKegForm';
 
-class NewKegControl extends React.Component{
-
+class NewKegControl extends React.Component {
   constructor(props) {
     super(props);
+    const { showNewKegForm } = this.props;
     this.state = {
-      showNewKegForm: this.props.showNewKegForm
+      showNewKegForm: { showNewKegForm },
     };
   }
 
@@ -20,18 +20,23 @@ class NewKegControl extends React.Component{
   }
 
   render() {
+    const { onNewKegCreation } = this.props;
+    const { showNewKegForm } = this.state;
     let newKegForm = null;
-    if (this.state.showNewKegForm === true) {
-      newKegForm = <NewKegForm
-        handleHideNewKegForm={this.handleHideNewKegForm.bind(this)}
-        onNewKegCreation={this.props.onNewKegCreation}
-      />;
-    } else if (this.state.showNewKegForm === false) {
+    if (showNewKegForm === true) {
+      newKegForm = (
+        <NewKegForm
+          handleHideNewKegForm={e => this.handleHideNewKegForm(e)}
+          onNewKegCreation={onNewKegCreation}
+        />
+      );
+    } else if (showNewKegForm === false) {
       newKegForm = null;
     }
     return (
       <div>
-        <style jsx>{`
+        <style jsx>
+          {`
           .btn {
             width: 130px;
             height: 50px;
@@ -39,9 +44,10 @@ class NewKegControl extends React.Component{
             border-radius: 10px;
             margin-left: 25%;
           }
-        `}</style>
+        `}
+        </style>
         <div>
-          <button className="btn" onClick={this.handleShowNewKegForm.bind(this)}>Tap a new keg!</button>
+          <button type="button" className="btn" onClick={this.handleShowNewKegForm.bind(this)}>Tap a new keg!</button>
         </div>
         {newKegForm}
       </div>
@@ -50,8 +56,8 @@ class NewKegControl extends React.Component{
 }
 
 NewKegControl.propTypes = {
-  onNewKegCreation: PropTypes.func,
-  showNewKegForm: PropTypes.bool
+  onNewKegCreation: PropTypes.func.isRequired,
+  showNewKegForm: PropTypes.bool.isRequired,
 };
 
 export default NewKegControl;

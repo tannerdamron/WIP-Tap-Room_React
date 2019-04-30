@@ -11,21 +11,23 @@ class Keg extends React.Component {
     super(props);
     this.state = {
       pints: props.pintsRemaining,
-      showKegEditForm: false
+      showKegEditForm: false,
     };
   }
 
   sellPint() {
-    this.setState({ pints: this.state.pints-1});
-    if (this.state.pints <= 0) {
+    const { pints } = this.state;
+    this.setState({ pints: pints - 1 });
+    if (pints <= 0) {
       alert('Keg empty');
-      this.setState({ pints: 0});
+      this.setState({ pints: 0 });
     }
   }
 
   sellGrowler() {
-    this.setState({ pints: this.state.pints-2 });
-    if (this.state.pints <= 0) {
+    const { pints } = this.state;
+    this.setState({ pints: pints - 2 });
+    if (pints <= 0) {
       alert('Keg empty');
       this.setState({ pints: 0 });
     }
@@ -44,17 +46,24 @@ class Keg extends React.Component {
   }
 
   render() {
+    const {
+      kegId, onEditKegCreation, brewer, price, abv, style,
+    } = this.props;
+    const { showKegEditForm, pints } = this.state;
     let editKegForm = null;
-    if (this.state.showKegEditForm === true) {
-      editKegForm = <EditKegForm
-        onHideEditKegForm = {this.handleHideEditKegForm.bind(this)}
-        kegId = {this.props.kegId}
-        onEditKegCreation = {this.props.onEditKegCreation}
-      />;
+    if (showKegEditForm === true) {
+      editKegForm = (
+        <EditKegForm
+          onHideEditKegForm={e => this.handleHideEditKegForm(e)}
+          kegId={kegId}
+          onEditKegCreation={onEditKegCreation}
+        />
+      );
     }
-    return(
+    return (
       <div>
-        <style jsx>{`
+        <style jsx>
+          {`
           .keg {
             color: goldenrod;
             text-align: center;
@@ -63,6 +72,7 @@ class Keg extends React.Component {
             text-shadow: 1px 1px black;
             background-color: rgba(105,105,105,.7);
             width: 300px;
+            height: 470px;
             margin-left: 25%;
             margin-bottom: 10px;
             border-radius: 5%;
@@ -95,29 +105,77 @@ class Keg extends React.Component {
             display: grid;
             grid-template-rows: 1fr 1fr 1fr 1fr
           }
-        `}</style>
+          div {
+            outline: none;
+          }
+        `}
+        </style>
         <div className="keg">
           <div>
-            <p>Brewer: {this.props.brewer}</p>
-            <p>Price: ${this.props.price}</p>
-            <p>ABV: {this.props.abv}</p>
-            <p>Pints Remaining: {this.state.pints}</p>
-            <p>Style of beer: {this.props.style}</p>
+            <p>
+              Brewer:
+              {` ${brewer}`}
+            </p>
+            <p>
+              Price:
+              {` $${price}`}
+            </p>
+            <p>
+              ABV:
+              {` ${abv}`}
+            </p>
+            <p>
+              Pints Remaining:
+              {pints}
+            </p>
+            <p>
+              Style of beer:
+              {` ${style}`}
+            </p>
             <div className="btnRows">
-              <div>
+              <div
+                onClick={e => this.sellPint(e)}
+                onKeyPress={this.handleKeyPress}
+                role="button"
+                tabIndex={0}
+              >
                 <label>Sell Pint     </label>
-                <img className="pint" src={pint} onClick={this.sellPint.bind(this)} />
+                <img
+                  alt="pint of beer"
+                  className="pint"
+                  src={pint}
+                />
               </div>
-              <div>
+              <div
+                onClick={e => this.sellGrowler(e)}
+                onKeyPress={this.handleKeyPress}
+                role="button"
+                tabIndex={0}
+              >
                 <label>Sell Growler     </label>
-                <img className="growler" src={growler} onClick={this.sellGrowler.bind(this)} />
+                <img
+                  alt="growler for beer"
+                  className="growler"
+                  src={growler}
+                />
               </div>
-              <div>
+              <div
+                onClick={e => this.tapkeg(e)}
+                onKeyPress={this.handleKeyPress}
+                role="button"
+                tabIndex={0}
+              >
                 <label>Tap this keg</label>
-                <img className="tap" src={tap} onClick={this.tapkeg.bind(this)}/>
+                <img
+                  alt="keg tap"
+                  className="tap"
+                  src={tap}
+                />
               </div>
               <div>
-                <button onClick={this.showKegEditForm.bind(this)}>Edit Keg</button>
+                <button type="button" onClick={e => this.showKegEditForm(e)}>
+                  Edit Keg
+                </button>
               </div>
             </div>
             {editKegForm}
@@ -135,7 +193,7 @@ Keg.propTypes = {
   pintsRemaining: PropTypes.number.isRequired,
   style: PropTypes.string.isRequired,
   kegId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  onEditKegCreation: PropTypes.func
+  onEditKegCreation: PropTypes.func.isRequired,
 };
 
 export default Keg;

@@ -3,13 +3,18 @@ import React from 'react';
 function About() {
   return (
     <div>
-      <style jsx>{`
+      <style jsx>
+        {`
         .about {
           color: goldenrod;
         }
-        `}</style>
+        `}
+      </style>
       <div>
-        <h1 className="about"><br />About Us</h1>
+        <h1 className="about">
+          <br />
+          About Us
+        </h1>
       </div>
     </div>
   );

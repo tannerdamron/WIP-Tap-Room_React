@@ -1,9 +1,10 @@
 import React from 'react';
 
 function Header() {
-  return(
+  return (
     <div>
-      <style jsx>{`
+      <style jsx>
+        {`
         .header {
           text-align: center;
           color: goldenrod;
@@ -11,9 +12,13 @@ function Header() {
           font-weight: lighter;
           text-shadow: 1px 1px black;
         }
-      `}</style>
+      `}
+      </style>
       <div>
-        <h1 className="header"><br/>Tan's Tap Jam</h1>
+        <h1 className="header">
+          <br />
+          Tan&apos;s Tap Jam
+        </h1>
       </div>
     </div>
   );

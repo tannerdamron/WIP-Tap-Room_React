@@ -9,7 +9,8 @@ import About from './About';
 function App() {
   return (
     <div>
-      <style jsx global>{`
+      <style jsx global>
+        {`
         .app {
         background-image: url('https://images6.alphacoders.com/405/405948.jpg');
         background-repeat: no-repeat;
@@ -18,13 +19,15 @@ function App() {
         position: relative;
         margin: -21px -8px 0 -8px;
         }
-      `}</style>
+        `}
+
+      </style>
       <div className="app">
         <Navbar />
         <Switch>
-          <Route exact path='/' component={Home} />
-          <Route path='/contact' component={Contact} />
-          <Route path='/about' component={About} />
+          <Route exact path="/" component={Home} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/about" component={About} />
           <Route component={Error404} />
         </Switch>
       </div>

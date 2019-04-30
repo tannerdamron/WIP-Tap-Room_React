@@ -1,15 +1,20 @@
 import React from 'react';
 
 function Contact() {
-  return(
+  return (
     <div>
-      <style jsx>{`
+      <style jsx>
+        {`
         .contact {
           color: goldenrod;
         }
-        `}</style>
+        `}
+      </style>
       <div>
-        <h1 className="contact"><br/>Contact</h1>
+        <h1 className="contact">
+          <br />
+        Contact
+        </h1>
       </div>
     </div>
   );

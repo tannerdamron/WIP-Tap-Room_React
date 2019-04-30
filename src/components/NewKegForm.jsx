@@ -3,23 +3,32 @@ import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
 
 function NewKegForm(props) {
-  let _brewer = null;
-  let _price = null;
-  let _abv = null;
-  let _style = null;
+  const { handleHideNewKegForm } = props;
+  let brewer = null;
+  let price = null;
+  let abv = null;
+  let style = null;
 
   function handleNewKegFormSubmission(e) {
     e.preventDefault();
-    props.onNewKegCreation({brewer: _brewer.value, price: _price.value, abv: _abv.value, pintsRemaining: 124, style: _style.value, id: v4()});
-    _brewer.value = '';
-    _price.value = '';
-    _abv.value = '';
-    _style.value = '';
+    props.onNewKegCreation({
+      brewer: brewer.value,
+      price: price.value,
+      abv: abv.value,
+      pintsRemaining: 124,
+      style: style.value,
+      id: v4(),
+    });
+    brewer.value = '';
+    price.value = '';
+    abv.value = '';
+    style.value = '';
   }
 
-  return(
+  return (
     <div>
-      <style jsx>{`
+      <style jsx>
+        {`
         .newKegForm {
           width: 200px;
           margin-left: 25%;
@@ -27,7 +36,8 @@ function NewKegForm(props) {
         .hideBtn {
           margin-left: 31.5%;
         }
-      `}</style>
+      `}
+      </style>
       <div>
         <form className="newKegForm" onSubmit={handleNewKegFormSubmission}>
           <input
@@ -35,27 +45,31 @@ function NewKegForm(props) {
             id="brewer"
             placeholder="Brewer"
             required
-            ref={(input) => { _brewer = input; }}/>
+            ref={(input) => { brewer = input; }}
+          />
           <input
             type="number"
             id="price"
             placeholder="Price per pint"
             required
-            ref={(input) => { _price = input; }}/>
+            ref={(input) => { price = input; }}
+          />
           <input
             type="text"
             id="abv"
             placeholder="ABV"
             required
-            ref={(input) => { _abv = input; }}/>
+            ref={(input) => { abv = input; }}
+          />
           <input
             type="text"
             id="style"
             placeholder="Style of beer"
             required
-            ref={(input) => { _style = input; }}/>
+            ref={(input) => { style = input; }}
+          />
           <button className="addKegBtn" type="submit">Add Keg</button>
-          <button className="hideBtn" onClick={props.handleHideNewKegForm}>Hide</button>
+          <button className="hideBtn" type="button" onClick={handleHideNewKegForm}>Hide</button>
         </form>
       </div>
     </div>
@@ -63,8 +77,8 @@ function NewKegForm(props) {
 }
 
 NewKegForm.propTypes = {
-  onNewKegCreation: PropTypes.func,
-  handleHideNewKegForm: PropTypes.func
+  onNewKegCreation: PropTypes.func.isRequired,
+  handleHideNewKegForm: PropTypes.func.isRequired,
 };
 
 export default NewKegForm;

@@ -6,11 +6,10 @@ import KegListLager from './KegListLager';
 import KegListIPA from './KegListIPA';
 
 class FilterKegsControl extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
-      value: 'all'
+      value: 'all',
     };
   }
 
@@ -19,41 +18,48 @@ class FilterKegsControl extends React.Component {
   }
 
   render() {
+    // Destructuring props and state
+    const { onEditKeg, allKegsList } = this.props;
+    const { value } = this.state;
     let kegFilter = null;
-    if (this.state.value === 'all') {
-      kegFilter = <KegListAll
-        onEditKeg={this.props.onEditKeg}
-        allKegsList={this.props.allKegsList}
-      />;
-    } else if (this.state.value === 'stout') {
-      kegFilter = <KegListStout/>;
-    } else if (this.state.value === 'lager') {
-      kegFilter = <KegListLager/>;
-    } else if (this.state.value === 'ipa') {
+    if (value === 'all') {
+      kegFilter = (
+        <KegListAll
+          onEditKeg={onEditKeg}
+          allKegsList={allKegsList}
+        />
+      );
+    } else if (value === 'stout') {
+      kegFilter = <KegListStout />;
+    } else if (value === 'lager') {
+      kegFilter = <KegListLager />;
+    } else if (value === 'ipa') {
       kegFilter = <KegListIPA />;
     }
     return (
       <div>
-        <style jsx>{`
-          .btn {
-            background-image: linear-gradient(white, goldenrod);
-          }
-          .filterLabel {
-            text-align: center;
-            color: goldenrod;
-            font-family: sans-serif;
-            font-weight: lighter;
-            text-shadow: 1px 1px black;
-            font-size: 20px;
-          }
-          .filterSelect {
-            margin-left: 50%;
-            margin-top: -20px;
-          }
-        `}</style>
+        <style jsx>
+          {`
+            .btn {
+              background-image: linear-gradient(white, goldenrod);
+            }
+            .filterLabel {
+              text-align: center;
+              color: goldenrod;
+              font-family: sans-serif;
+              font-weight: lighter;
+              text-shadow: 1px 1px black;
+              font-size: 20px;
+            }
+            .filterSelect {
+              margin-left: 50%;
+              margin-top: -20px;
+            }
+        `}
+        </style>
         <div className="filterSelect">
           <label className="filterLabel">Filter keg list by: </label>
-          <select value={this.state.value} onChange={this.handleFilterChange.bind(this)}>
+          <select value={value} onChange={this.handleFilterChange.bind(this)}>
             <option value="all">All</option>
             <option value="stout">Stout</option>
             <option value="lager">Lager</option>
@@ -67,8 +73,8 @@ class FilterKegsControl extends React.Component {
 }
 
 FilterKegsControl.propTypes = {
-  allKegsList: PropTypes.array,
-  onEditKeg: PropTypes.func
+  allKegsList: PropTypes.instanceOf(Array).isRequired,
+  onEditKeg: PropTypes.func.isRequired,
 };
 
 export default FilterKegsControl;
