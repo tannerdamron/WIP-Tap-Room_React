@@ -4,14 +4,14 @@ import Keg from './Keg';
 let ipaKegs = [
   {
     brewer: 'Space Dust IPA',
-    price: '$5',
+    price: '5',
     abv: '8.20%',
     pintsRemaining: 124,
     style: 'IPA'
   },
   {
     brewer: 'Froth God',
-    price: '$5',
+    price: '5',
     abv: '5.50%',
     pintsRemaining: 124,
     style: 'IPA'

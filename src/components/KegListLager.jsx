@@ -4,7 +4,7 @@ import Keg from './Keg';
 let lagerKegs = [
   {
     brewer: 'Blue Dabadeedabadie',
-    price: '$4',
+    price: '4',
     abv: '5.50%',
     pintsRemaining: 124,
     style: 'Lager'

@@ -61,7 +61,7 @@ class Keg extends React.Component {
             font-family: sans-serif;
             font-size: 20px;
             text-shadow: 1px 1px black;
-            background-color: rgba(0,0,0,.5);
+            background-color: rgba(105,105,105,.7);
             width: 300px;
             margin-left: 25%;
             margin-bottom: 10px;

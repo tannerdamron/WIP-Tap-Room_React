@@ -4,21 +4,21 @@ import Keg from './Keg';
 let stoutKegs = [
   {
     brewer: 'Ninkasi',
-    price: '$6',
+    price: '6',
     abv: '7.0%',
     pintsRemaining: 124,
     style: 'Stout'
   },
   {
     brewer: 'Tan',
-    price: '$7',
+    price: '7',
     abv: '9.0%',
     pintsRemaining: 124,
     style: 'Stout'
   },
   {
     brewer: 'The Jam',
-    price: '$25',
+    price: '25',
     abv: '21.0%',
     pintsRemaining: 124,
     style: 'Stout'
