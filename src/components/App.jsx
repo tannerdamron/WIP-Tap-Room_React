@@ -9,7 +9,7 @@ import About from './About';
 function App() {
   return (
     <div>
-      <style jsx>{`
+      <style jsx global>{`
         .app {
         background-image: url('https://images6.alphacoders.com/405/405948.jpg');
         background-repeat: no-repeat;

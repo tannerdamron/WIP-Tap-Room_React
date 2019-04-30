@@ -24,6 +24,9 @@ function NewKegForm(props) {
           width: 200px;
           margin-left: 25%;
         }
+        .hideBtn {
+          margin-left: 31.5%;
+        }
       `}</style>
       <div>
         <form className="newKegForm" onSubmit={handleNewKegFormSubmission}>
@@ -51,7 +54,8 @@ function NewKegForm(props) {
             placeholder="Style of beer"
             required
             ref={(input) => { _style = input; }}/>
-          <button type="submit">Add Keg</button>
+          <button className="addKegBtn" type="submit">Add Keg</button>
+          <button className="hideBtn" onClick={props.handleHideNewKegForm}>Hide</button>
         </form>
       </div>
     </div>
@@ -59,7 +63,8 @@ function NewKegForm(props) {
 }
 
 NewKegForm.propTypes = {
-  onNewKegCreation: PropTypes.func
+  onNewKegCreation: PropTypes.func,
+  handleHideNewKegForm: PropTypes.func
 };
 
 export default NewKegForm;

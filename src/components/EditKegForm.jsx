@@ -21,7 +21,7 @@ function EditKegForm(props) {
       <style jsx>{`
         .editKegForm {
           width: 200px;
-          margin-left: 25%;
+          margin-left: 19%;
         }
       `}</style>
       <div>
@@ -51,6 +51,7 @@ function EditKegForm(props) {
             required
             ref={(input) => { _style = input; }} />
           <button type="submit">Edit Keg</button>
+          <button onClick={props.onHideEditKegForm}>Hide</button>
         </form>
       </div>
     </div>
@@ -59,7 +60,8 @@ function EditKegForm(props) {
 
 EditKegForm.propTypes = {
   onEditKegCreation: PropTypes.func,
-  kegId: PropTypes.number.isRequired
+  kegId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  onHideEditKegForm: PropTypes.func
 };
 
 export default EditKegForm;

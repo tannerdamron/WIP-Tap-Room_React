@@ -6,7 +6,7 @@ import FilterKegsControl from './FilterKegsControl';
 let allKegs = [
   {
     brewer: 'Ninkasi',
-    price: '$6',
+    price: '6',
     abv: '7.0%',
     pintsRemaining: 124,
     style: 'Stout',
@@ -14,7 +14,7 @@ let allKegs = [
   },
   {
     brewer: 'Tan',
-    price: '$7',
+    price: '7',
     abv: '9.0%',
     pintsRemaining: 123,
     style: 'Stout',
@@ -22,7 +22,7 @@ let allKegs = [
   },
   {
     brewer: 'Space Dust IPA',
-    price: '$5',
+    price: '5',
     abv: '8.20%',
     pintsRemaining: 122,
     style: 'IPA',
@@ -30,7 +30,7 @@ let allKegs = [
   },
   {
     brewer: 'Blue Dabadeedabadie',
-    price: '$4',
+    price: '4',
     abv: '5.50%',
     pintsRemaining: 124,
     style: 'Lager',
@@ -38,7 +38,7 @@ let allKegs = [
   },
   {
     brewer: 'The Jam',
-    price: '$25',
+    price: '25',
     abv: '21.0%',
     pintsRemaining: 124,
     style: 'Stout',
@@ -46,7 +46,7 @@ let allKegs = [
   },
   {
     brewer: 'Froth God',
-    price: '$5',
+    price: '5',
     abv: '5.50%',
     pintsRemaining: 124,
     style: 'IPA',
@@ -54,7 +54,7 @@ let allKegs = [
   },
   {
     brewer: 'Logger',
-    price: '$6',
+    price: '6',
     abv: '6.10%',
     pintsRemaining: 124,
     style: 'Lager',
@@ -67,16 +67,14 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      allKegsList: allKegs,
-      showNewKegForm: false
+      allKegsList: allKegs
     };
   }
 
   handleAddingNewKegToList(newKeg) {
     let newAllKegsList = this.state.allKegsList.slice();
     newAllKegsList.push(newKeg);
-    this.setState({allKegsList: newAllKegsList});
-    this.setState({ showNewKegForm: false });
+    this.setState({ allKegsList: newAllKegsList });
   }
 
   handleEditKeg(currentKeg) {
@@ -98,7 +96,6 @@ class Home extends React.Component {
         <div>
           <Header />
           <NewKegControl
-            showNewKegForm={this.state.showNewKegForm}
             onNewKegCreation={this.handleAddingNewKegToList.bind(this)}
           />
           <FilterKegsControl

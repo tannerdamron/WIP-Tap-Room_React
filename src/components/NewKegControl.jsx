@@ -15,10 +15,15 @@ class NewKegControl extends React.Component{
     this.setState({ showNewKegForm: true });
   }
 
+  handleHideNewKegForm() {
+    this.setState({ showNewKegForm: false });
+  }
+
   render() {
     let newKegForm = null;
     if (this.state.showNewKegForm === true) {
       newKegForm = <NewKegForm
+        handleHideNewKegForm={this.handleHideNewKegForm.bind(this)}
         onNewKegCreation={this.props.onNewKegCreation}
       />;
     } else if (this.state.showNewKegForm === false) {
@@ -30,7 +35,7 @@ class NewKegControl extends React.Component{
           .btn {
             width: 130px;
             height: 50px;
-            background-color: goldenrod;
+            background-image: linear-gradient(white, goldenrod);
             border-radius: 10px;
             margin-left: 25%;
           }
