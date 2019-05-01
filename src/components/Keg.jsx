@@ -6,7 +6,6 @@ import growler from '../assets/images/growler.png';
 import tap from '../assets/images/tap.png';
 
 class Keg extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -76,7 +75,6 @@ class Keg extends React.Component {
             margin-left: 25%;
             margin-bottom: 10px;
             border-radius: 5%;
-            z-index: 2;
             padding: .1px;
           }
           .pint {
@@ -85,6 +83,8 @@ class Keg extends React.Component {
           }
           .pint:hover {
             cursor: pointer;
+            height: 50px;
+            width: 30px;
           }
           .growler {
             height: 50px;
@@ -92,6 +92,8 @@ class Keg extends React.Component {
           }
           .growler:hover {
             cursor: pointer;
+            height: 60px;
+            width: 40px;
           }
           .tap {
             width: 80px;
@@ -100,6 +102,7 @@ class Keg extends React.Component {
           }
           .tap:hover {
             cursor: pointer;
+            width: 120px;
           }
           .btnRows {
             display: grid;
@@ -110,7 +113,7 @@ class Keg extends React.Component {
           }
         `}
         </style>
-        <div className="keg">
+        <div id="keg" className="keg">
           <div>
             <p>
               Brewer:
@@ -126,7 +129,7 @@ class Keg extends React.Component {
             </p>
             <p>
               Pints Remaining:
-              {pints}
+              {` ${pints}`}
             </p>
             <p>
               Style of beer:
@@ -139,7 +142,7 @@ class Keg extends React.Component {
                 role="button"
                 tabIndex={0}
               >
-                <label>Sell Pint     </label>
+                <label>Sell Pint</label>
                 <img
                   alt="pint of beer"
                   className="pint"
@@ -152,7 +155,7 @@ class Keg extends React.Component {
                 role="button"
                 tabIndex={0}
               >
-                <label>Sell Growler     </label>
+                <label>Sell Growler</label>
                 <img
                   alt="growler for beer"
                   className="growler"

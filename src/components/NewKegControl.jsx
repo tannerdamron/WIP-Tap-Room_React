@@ -41,8 +41,13 @@ class NewKegControl extends React.Component {
             width: 130px;
             height: 50px;
             background-image: linear-gradient(white, goldenrod);
+            box-shadow: inset 0 0 10px black;
             border-radius: 10px;
             margin-left: 25%;
+            outline: none;
+          }
+          .btn:hover {
+            cursor: pointer;
           }
         `}
         </style>

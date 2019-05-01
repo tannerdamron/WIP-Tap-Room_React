@@ -40,9 +40,6 @@ class FilterKegsControl extends React.Component {
       <div>
         <style jsx>
           {`
-            .btn {
-              background-image: linear-gradient(white, goldenrod);
-            }
             .filterLabel {
               text-align: center;
               color: goldenrod;
