@@ -53,11 +53,15 @@ class Keg extends React.Component {
     if (showKegEditForm === true) {
       editKegForm = (
         <EditKegForm
+          // Passed showKeg state, need to change state after submit edit button
+          showKegEditForm={showKegEditForm}
           onHideEditKegForm={e => this.handleHideEditKegForm(e)}
           kegId={kegId}
           onEditKegCreation={onEditKegCreation}
         />
       );
+    } else if (showKegEditForm === false) {
+      editKegForm = null;
     }
     return (
       <div>

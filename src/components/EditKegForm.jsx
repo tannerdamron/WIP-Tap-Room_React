@@ -35,6 +35,11 @@ const EditKegForm = ({ onHideEditKegForm, onEditKegCreation, kegId }) => {
         input {
           width: 120%;
           height: 25px;
+          background-color: rgba(105,105,105);
+          color: goldenrod;
+        }
+        ::placeholder {
+          color: white;
         }
         .brewerInput {
 
