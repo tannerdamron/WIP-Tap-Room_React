@@ -17,6 +17,7 @@ const EditKegForm = ({ onHideEditKegForm, onEditKegCreation, kegId }) => {
       style: style.value,
       id: kegId,
     });
+    onHideEditKegForm();
     brewer.value = '';
     price.value = '';
     abv.value = '';

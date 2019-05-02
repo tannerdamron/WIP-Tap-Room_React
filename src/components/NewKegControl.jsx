@@ -45,14 +45,16 @@ class NewKegControl extends React.Component {
             border-radius: 10px;
             margin-left: 25%;
             outline: none;
+            font-size: 15px;
           }
           .btn:hover {
             cursor: pointer;
+            box-shadow: inset 0 0 20px black;
           }
         `}
         </style>
         <div>
-          <button type="button" className="btn" onClick={this.handleShowNewKegForm.bind(this)}>Tap a new keg!</button>
+          <button type="button" className="btn" onClick={e => this.handleShowNewKegForm(e)}>Tap a new keg!</button>
         </div>
         {newKegForm}
       </div>

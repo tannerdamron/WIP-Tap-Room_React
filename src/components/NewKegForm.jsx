@@ -19,6 +19,7 @@ function NewKegForm(props) {
       style: style.value,
       id: v4(),
     });
+    handleHideNewKegForm();
     brewer.value = '';
     price.value = '';
     abv.value = '';
@@ -31,7 +32,9 @@ function NewKegForm(props) {
         {`
         .newKegForm {
           width: 200px;
-          margin-left: 25%;
+          margin-left: 40%;
+          margin-top: -4%;
+          margin-right: 10%;
         }
         .hideBtn {
           margin-left: 31.5%;

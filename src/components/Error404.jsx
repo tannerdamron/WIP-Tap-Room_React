@@ -25,9 +25,7 @@ function Error404({ location }) {
         <h1>Error!</h1>
         <h2>
           The page
-          {' '}
-          {location.pathname}
-          {' '}
+          {` ${location.pathname} `}
           does not exist!
         </h2>
         <h3>

@@ -8,17 +8,17 @@ module.exports = {
     'react-hot-loader/patch',
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server',
-    resolve(__dirname, "src") + "/index.jsx"
+    `${resolve(__dirname, 'src')}/index.jsx`,
   ],
 
   output: {
     filename: 'app.bundle.js',
     path: resolve(__dirname, 'build'),
-    publicPath: '/'
+    publicPath: '/',
   },
 
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx'],
   },
 
   devtool: '#source-map',
@@ -26,7 +26,7 @@ module.exports = {
   devServer: {
     hot: true,
     contentBase: resolve(__dirname, 'build'),
-    publicPath: '/'
+    publicPath: '/',
   },
 
   module: {
@@ -37,24 +37,24 @@ module.exports = {
           loader: 'url-loader',
           options: {
             limit: 8000,
-            name: 'images/[hash]-[name].[ext]'
-          }
-        }
+            name: 'images/[hash]-[name].[ext]',
+          },
+        },
       },
       {
         test: /\.jsx?$/,
-        loader: "babel-loader",
+        loader: 'babel-loader',
         exclude: /node_modules/,
         options: {
           presets: [
-            ["es2015", { "modules": false }],
-            "react",
+            ['es2015', { modules: false }],
+            'react',
           ],
           plugins: [
-            "react-hot-loader/babel",
-            "styled-jsx/babel"
-          ]
-        }
+            'react-hot-loader/babel',
+            'styled-jsx/babel',
+          ],
+        },
       },
     ],
   },
@@ -66,7 +66,7 @@ module.exports = {
       template: 'template.ejs',
       appMountId: 'react-app-root',
       title: 'Tap Room',
-      filename: resolve(__dirname, "build", "index.html"),
+      filename: resolve(__dirname, 'build', 'index.html'),
     }),
-  ]
+  ],
 };

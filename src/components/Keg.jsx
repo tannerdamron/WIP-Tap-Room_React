@@ -53,8 +53,6 @@ class Keg extends React.Component {
     if (showKegEditForm === true) {
       editKegForm = (
         <EditKegForm
-          // Passed showKeg state, need to change state after submit edit button
-          showKegEditForm={showKegEditForm}
           onHideEditKegForm={e => this.handleHideEditKegForm(e)}
           kegId={kegId}
           onEditKegCreation={onEditKegCreation}
@@ -73,13 +71,14 @@ class Keg extends React.Component {
             font-family: sans-serif;
             font-size: 20px;
             text-shadow: 1px 1px black;
-            background-color: rgba(105,105,105,.7);
+            background-color: rgba(40,40,40,.8);
             width: 300px;
             height: 470px;
-            margin-left: 25%;
+            margin-left: 15%;
             margin-bottom: 10px;
             border-radius: 5%;
             padding: .1px;
+            border: 1px solid white;
           }
           .pint {
             height: 40px;
@@ -114,6 +113,15 @@ class Keg extends React.Component {
           }
           div {
             outline: none;
+          }
+          .editBtn {
+            background-image: linear-gradient(white, goldenrod);
+            border-radius: 5px;
+            border: 1px solid darkgray;
+            width: 120px;
+            margin-top: 10px;
+            font-size: 14px;
+            box-shadow: inset 0 0 10px black;
           }
         `}
         </style>
@@ -180,8 +188,11 @@ class Keg extends React.Component {
                 />
               </div>
               <div>
-                <button type="button" onClick={e => this.showKegEditForm(e)}>
-                  Edit Keg
+                <button
+                  className="editBtn"
+                  type="button"
+                  onClick={e => this.showKegEditForm(e)}>
+                  Edit keg
                 </button>
               </div>
             </div>
