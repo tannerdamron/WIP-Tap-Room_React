@@ -123,6 +123,10 @@ class Keg extends React.Component {
             font-size: 14px;
             box-shadow: inset 0 0 10px black;
           }
+          .editBtn:hover {
+            cursor: pointer;
+            box-shadow: inset 0 0 20px black;
+          }
         `}
         </style>
         <div id="keg" className="keg">

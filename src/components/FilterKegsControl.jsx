@@ -52,6 +52,9 @@ class FilterKegsControl extends React.Component {
               margin-left: 50%;
               margin-top: -20px;
             }
+            select:hover {
+              cursor: pointer;
+            }
         `}
         </style>
         <div className="filterSelect">

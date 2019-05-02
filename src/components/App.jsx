@@ -11,7 +11,7 @@ function App() {
     <div>
       <style jsx global>
         {`
-        .app {
+        body {
         background-image: url('https://images6.alphacoders.com/405/405948.jpg');
         background-repeat: no-repeat;
         background-size: cover;
@@ -19,8 +19,11 @@ function App() {
         position: relative;
         margin: -21px -8px 0 -8px;
         }
+        button {
+          outline: none;
+        }
+        
         `}
-
       </style>
       <div className="app">
         <Navbar />

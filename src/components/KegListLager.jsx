@@ -12,7 +12,7 @@ const lagerKegs = [
   },
   {
     brewer: 'Logger',
-    price: '$6',
+    price: '6',
     abv: '6.10%',
     pintsRemaining: 124,
     style: 'Lager',

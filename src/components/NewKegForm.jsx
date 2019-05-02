@@ -32,12 +32,34 @@ function NewKegForm(props) {
         {`
         .newKegForm {
           width: 200px;
-          margin-left: 40%;
+          margin-left: 20%;
           margin-top: -4%;
           margin-right: 10%;
         }
         .hideBtn {
-          margin-left: 31.5%;
+          margin-left: 3%;
+        }
+        button {
+          background-image: linear-gradient(white, goldenrod);
+          border-radius: 5px;
+          border: 1px solid darkgray;
+          width: 65px;
+          margin-top: 10px;
+          font-size: 11px;
+          box-shadow: inset 0 0 5px black;
+        }
+        ::placeholder {
+          color: goldenrod;
+        }
+        button:hover {
+          cursor: pointer;
+          box-shadow: inset 0 0 10px black;
+        }
+        input {
+          width: 120%;
+          height: 25px;
+          background-color: rgba(105,105,105);
+          color: goldenrod;
         }
       `}
       </style>
