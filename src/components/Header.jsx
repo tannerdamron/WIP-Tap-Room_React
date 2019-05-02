@@ -10,6 +10,7 @@ function Header() {
           color: goldenrod;
           font-family: sans-serif;
           font-weight: lighter;
+          font-size: 50px;
           text-shadow: 1px 1px black;
         }
       `}

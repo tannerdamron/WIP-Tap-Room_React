@@ -52,6 +52,11 @@ class FilterKegsControl extends React.Component {
               margin-left: 50%;
               margin-top: -20px;
             }
+            select {
+              background-image: linear-gradient(white, goldenrod);
+              width: 100px;
+              height: 20px;
+            }
             select:hover {
               cursor: pointer;
             }
