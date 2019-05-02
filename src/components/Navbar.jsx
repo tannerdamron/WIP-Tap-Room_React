@@ -15,7 +15,6 @@ function Navbar() {
         .fixed {
           position: fixed;
           width: 110%;
-          margin-top: -13px;
           z-index: 2;
         }
         button {

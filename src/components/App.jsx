@@ -11,18 +11,17 @@ function App() {
     <div>
       <style jsx global>
         {`
-        body {
-        background-image: url('https://images6.alphacoders.com/405/405948.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
-        position: relative;
-        margin: -21px -8px 0 -8px;
-        }
-        button {
-          outline: none;
-        }
-        
+          body {
+          background-image: url('https://images6.alphacoders.com/405/405948.jpg');
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-attachment: fixed;
+          position: relative;
+          margin: -35px -8px 0 -8px;
+          }
+          button {
+            outline: none;
+          }
         `}
       </style>
       <div className="app">
