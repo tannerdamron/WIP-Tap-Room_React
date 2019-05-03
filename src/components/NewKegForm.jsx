@@ -33,7 +33,7 @@ function NewKegForm(props) {
         .newKegForm {
           width: 200px;
           margin-left: 20%;
-          margin-top: -4%;
+          margin-top: -7%;
           margin-right: 10%;
         }
         .hideBtn {
@@ -57,7 +57,7 @@ function NewKegForm(props) {
         }
         input {
           width: 120%;
-          height: 25px;
+          height: 30px;
           background-color: rgba(105,105,105);
           color: goldenrod;
         }

@@ -5,16 +5,18 @@ function Contact() {
     <div>
       <style jsx>
         {`
-        .contact {
-          color: goldenrod;
-        }
+          .contact {
+            color: goldenrod;
+            margin-top: 34px;
+          }
+          .header {
+            text-align: center;
+          }
         `}
       </style>
-      <div>
-        <h1 className="contact">
-          <br />
-        Contact
-        </h1>
+      <div className="contact">
+        <br />
+        <h1 className="header">Contact</h1>
       </div>
     </div>
   );
