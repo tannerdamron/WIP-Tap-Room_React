@@ -10,7 +10,7 @@ function Error404({ location }) {
           .errorPage {
             background-color: rgba(255, 0, 0, 0.7);
             color: white;
-            margin-top: 2%;
+            margin-top: 3.7%;
             width: 20%;
             height: 50%;
             text-align: center;

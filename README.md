@@ -9,7 +9,7 @@
 This web application was built with React, and will allow the user, as a tap room employee, to view a list of available kegs and sell a pint or growler per keg. The user can also see the pints remaining in each keg. The user can add a new keg, tap any existing keg, and filter the kegs by style of beer or price per pint.
 
 ## Blueprints
-![](src/assets/blueprints/TapRoomBlueprints.jpeg?raw=true)
+![](src/assets/blueprints/blueprints.jpeg?raw=true)
 
 ## Difference in development from Angular
 * Styling is a bit more difficult

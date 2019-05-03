@@ -16,7 +16,8 @@ function Contact() {
       </style>
       <div className="contact">
         <br />
-        <h1 className="header">Contact</h1>
+        <h1 className="header">Feel free to contact us at (360)555-555</h1>
+        <h1 className="header">or email us at tanstapjam@gmail.com</h1>
       </div>
     </div>
   );
