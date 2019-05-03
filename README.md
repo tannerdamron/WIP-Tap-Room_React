@@ -18,7 +18,7 @@ This web application was built with React, and will allow the user, as a tap roo
 
 ## Known Bugs
 
-* No Known Bugs
+* No known bugs
 
 ## Specifications
 

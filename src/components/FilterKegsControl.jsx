@@ -80,6 +80,9 @@ class FilterKegsControl extends React.Component {
 
 FilterKegsControl.propTypes = {
   allKegsList: PropTypes.instanceOf(Array).isRequired,
+  allIpaKegsList: PropTypes.instanceOf(Array).isRequired,
+  allStoutKegsList: PropTypes.instanceOf(Array).isRequired,
+  allLagerKegsList: PropTypes.instanceOf(Array).isRequired,
   onEditKeg: PropTypes.func.isRequired,
   onRemoveKeg: PropTypes.func.isRequired,
 };

@@ -165,11 +165,28 @@ class Home extends React.Component {
   }
 
   handleEditKeg(currentKeg) {
-    const { allKegsList } = this.state;
+    const {
+      allKegsList,
+      allStoutKegsList,
+      allLagerKegsList,
+      allIpaKegsList,
+    } = this.state;
     const newAllKegsList = allKegsList.slice();
+    const newStoutKegsList = allStoutKegsList.slice();
+    const newLagerKegsList = allLagerKegsList.slice();
+    const newIpaKegsList = allIpaKegsList.slice();
     for (let i = 0; i < newAllKegsList.length; i += 1) {
       if (currentKeg.id === newAllKegsList[i].id) {
         newAllKegsList[i] = currentKeg;
+      } if (currentKeg.id === newAllKegsList[i].id && currentKeg.style === 'Stout') {
+        newStoutKegsList[i] = currentKeg;
+        this.setState({ allStoutKegsList: newStoutKegsList });
+      } if (currentKeg.id === newAllKegsList[i].id && currentKeg.style === 'Lager') {
+        newLagerKegsList[i] = currentKeg;
+        this.setState({ allLagerKegsList: newLagerKegsList });
+      } if (currentKeg.id === newAllKegsList[i].id && currentKeg.style === 'IPA') {
+        newIpaKegsList[i] = currentKeg;
+        this.setState({ allIpaKegsList: newIpaKegsList });
       }
     }
     this.setState({ allKegsList: newAllKegsList });
