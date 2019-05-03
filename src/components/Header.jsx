@@ -18,7 +18,7 @@ function Header() {
       <div>
         <h1 className="header">
           <br />
-          Tan&apos;s Tap Jam
+          {'Tan\'s Tap Jam'}
         </h1>
       </div>
     </div>

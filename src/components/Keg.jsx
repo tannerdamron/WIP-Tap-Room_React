@@ -65,92 +65,77 @@ class Keg extends React.Component {
       <div>
         <style jsx>
           {`
-          .keg {
-            color: goldenrod;
-            text-align: center;
-            font-family: sans-serif;
-            font-size: 20px;
-            text-shadow: 1px 1px black;
-            background-color: rgba(40,40,40,.8);
-            width: 300px;
-            height: 470px;
-            margin-left: 15%;
-            margin-bottom: 10px;
-            border-radius: 5%;
-            padding: .1px;
-            border: 1px solid white;
-          }
-          .pint {
-            height: 40px;
-            width: 20px;
-          }
-          .pint:hover {
-            cursor: pointer;
-            height: 50px;
-            width: 30px;
-          }
-          .growler {
-            height: 50px;
-            width: 30px;
-          }
-          .growler:hover {
-            cursor: pointer;
-            height: 60px;
-            width: 40px;
-          }
-          .tap {
-            width: 80px;
-            height: 60px;
-            margin-left: -20px;
-          }
-          .tap:hover {
-            cursor: pointer;
-            width: 120px;
-          }
-          .btnRows {
-            display: grid;
-            grid-template-rows: 1fr 1fr 1fr 1fr
-          }
-          div {
-            outline: none;
-          }
-          .editBtn {
-            background-image: linear-gradient(white, goldenrod);
-            border-radius: 5px;
-            border: 1px solid darkgray;
-            width: 120px;
-            margin-top: 10px;
-            font-size: 14px;
-            box-shadow: inset 0 0 10px black;
-          }
-          .editBtn:hover {
-            cursor: pointer;
-            box-shadow: inset 0 0 20px black;
-          }
-        `}
+            .keg {
+              color: goldenrod;
+              text-align: center;
+              font-family: sans-serif;
+              font-size: 20px;
+              text-shadow: 1px 1px black;
+              background-color: rgba(40, 40, 40, 0.8);
+              width: 300px;
+              height: 470px;
+              margin-left: 15%;
+              margin-bottom: 10px;
+              border-radius: 5%;
+              padding: 0.1px;
+              border: 1px solid white;
+            }
+            .pint {
+              height: 40px;
+              width: 20px;
+            }
+            .pint:hover {
+              cursor: pointer;
+              height: 50px;
+              width: 30px;
+            }
+            .growler {
+              height: 50px;
+              width: 30px;
+            }
+            .growler:hover {
+              cursor: pointer;
+              height: 60px;
+              width: 40px;
+            }
+            .tap {
+              width: 80px;
+              height: 60px;
+              margin-left: -20px;
+            }
+            .tap:hover {
+              cursor: pointer;
+              width: 120px;
+            }
+            .btnRows {
+              display: grid;
+              grid-template-rows: 1fr 1fr 1fr 1fr;
+            }
+            div {
+              outline: none;
+            }
+            .editBtn {
+              background-image: linear-gradient(white, goldenrod);
+              border-radius: 5px;
+              border: 1px solid darkgray;
+              width: 120px;
+              margin-top: 10px;
+              font-size: 14px;
+              box-shadow: inset 0 0 10px black;
+            }
+            .editBtn:hover {
+              cursor: pointer;
+              box-shadow: inset 0 0 20px black;
+            }
+          `}
         </style>
         <div id="keg" className="keg">
           <div>
-            <p>
-              Brewer:
-              {` ${brewer}`}
-            </p>
-            <p>
-              Price:
-              {` $${price}`}
-            </p>
-            <p>
-              ABV:
-              {` ${abv}`}
-            </p>
-            <p>
-              Pints Remaining:
-              {` ${pints}`}
-            </p>
-            <p>
-              Style of beer:
-              {` ${style}`}
-            </p>
+            <p>{`Brewer: ${brewer}`}</p>
+            <p>{`Price: $${price}`}</p>
+            <p>{`ABV: ${abv}`}</p>
+            <p>{`Pints Remaining: ${pints}`}</p>
+            <p>{`Style of beer: ${style}`}</p>
             <div className="btnRows">
               <div
                 onClick={e => this.sellPint(e)}
@@ -159,11 +144,7 @@ class Keg extends React.Component {
                 tabIndex={0}
               >
                 <label>Sell Pint</label>
-                <img
-                  alt="pint of beer"
-                  className="pint"
-                  src={pint}
-                />
+                <img alt="pint of beer" className="pint" src={pint} />
               </div>
               <div
                 onClick={e => this.sellGrowler(e)}
@@ -185,17 +166,14 @@ class Keg extends React.Component {
                 tabIndex={0}
               >
                 <label>Tap this keg</label>
-                <img
-                  alt="keg tap"
-                  className="tap"
-                  src={tap}
-                />
+                <img alt="keg tap" className="tap" src={tap} />
               </div>
               <div>
                 <button
                   className="editBtn"
                   type="button"
-                  onClick={e => this.showKegEditForm(e)}>
+                  onClick={e => this.showKegEditForm(e)}
+                >
                   Edit keg
                 </button>
               </div>

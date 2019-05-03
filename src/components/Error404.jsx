@@ -23,7 +23,11 @@ function Error404({ location }) {
         <br />
         <h1>Error!</h1>
         <h2>{`The page ${location.pathname} does not exist!`}</h2>
-        <h3>Would you like to return <Link to="/">home</Link> instead?</h3>
+        <h3>
+          {'Would you like to return '}
+          <Link to="/">home</Link>
+          {'instead?'}
+        </h3>
       </div>
     </div>
   );

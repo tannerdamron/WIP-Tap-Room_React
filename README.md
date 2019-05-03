@@ -1,12 +1,12 @@
 ## **Tap Room React**
 
 #### By Tanner Damron
-###### Initiated April 16th, 2019.
+###### Initiated April 16th, 2019. Finished May 3rd, 2019.
 
 ----------
 
 ## Description
-This web application was built with React, and will allow the user, as a tap room employee, to view a list of available kegs and sell a pint or growler per keg. The user can also see the pints remaining in each keg. The user can add a new keg, tap any existing keg, and filter the kegs by style of beer or price per pint.
+This web application was built with React, and will allow the user, as a tap room employee, to view a list of available kegs and sell a pint or growler per keg. The user can also see the pints remaining in each keg. The user can add a new keg, tap any existing keg, and filter the kegs by style of beer.
 
 ## Blueprints
 ![](src/assets/blueprints/blueprints.png?raw=true)
@@ -15,6 +15,7 @@ This web application was built with React, and will allow the user, as a tap roo
 * Styling is a bit more difficult
 * Creating and putting components onto a page seems to be faster
 * Passing data up seems to be easier
+
 ## Known Bugs
 
 * No Known Bugs
@@ -186,7 +187,7 @@ This web application was built with React, and will allow the user, as a tap roo
   </tr>
   <tr>
     <td> Behavior </td>
-    <td>As a tap room employee, I want to be able to filter the list of kegs by type of beer or price of pint.</td>
+    <td>As a tap room employee, I want to be able to filter the list of kegs by type of beer</td>
   </tr>
   <tr>
     <td> Input </td>
@@ -210,7 +211,7 @@ This web application was built with React, and will allow the user, as a tap roo
 
 
 ## Notes
-* > Can't seem to style the entire body or html
+* > Can't seem to style the entire body or html (fixed)
 
 ## Setup and Use
 
@@ -247,6 +248,7 @@ This web application was built with React, and will allow the user, as a tap roo
 * Node.js v10.15.3
 * npm v6.4.1
 * React
+* JSX
 * Babel v7.0.0
 
 ## Contact
