@@ -14,7 +14,7 @@ This web application was built with React, and will allow the user, as a tap roo
 ## Difference in development from Angular
 * Styling is a bit more difficult
 * Creating and putting components onto a page seems to be faster
-* Passing data up seems to be easier
+* Passing data seems to be easier
 
 ## Known Bugs
 
@@ -244,11 +244,13 @@ This web application was built with React, and will allow the user, as a tap roo
 ## Built With
 
 * Windows 10.1
-* VisualStudioCode (IDE)
+* Visual Studio Code (Text Editor)
 * Node.js v10.15.3
 * npm v6.4.1
 * React
 * JSX
+* JavaScript
+* CSS
 * Babel v7.0.0
 
 ## Contact
