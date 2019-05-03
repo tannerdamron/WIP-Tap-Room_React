@@ -64,7 +64,11 @@ class NewKegControl extends React.Component {
 
 NewKegControl.propTypes = {
   onNewKegCreation: PropTypes.func.isRequired,
-  showNewKegForm: PropTypes.bool.isRequired,
+  showNewKegForm: PropTypes.func,
+};
+
+NewKegControl.defaultProps = {
+  showNewKegForm: PropTypes.func,
 };
 
 export default NewKegControl;

@@ -1,9 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import KegListAll from './KegListAll';
-import KegListStout from './KegListStout';
-import KegListLager from './KegListLager';
-import KegListIPA from './KegListIPA';
 
 class FilterKegsControl extends React.Component {
   constructor(props) {
@@ -19,23 +16,27 @@ class FilterKegsControl extends React.Component {
 
   render() {
     // Destructuring props and state
-    const { onEditKeg, allKegsList } = this.props;
+    const {
+      onEditKeg,
+      onRemoveKeg,
+      allKegsList,
+      allIpaKegsList,
+      allLagerKegsList,
+      allStoutKegsList,
+    } = this.props;
     const { value } = this.state;
     let kegFilter = null;
-    if (value === 'all') {
-      kegFilter = (
-        <KegListAll
-          onEditKeg={onEditKeg}
-          allKegsList={allKegsList}
-        />
-      );
-    } else if (value === 'stout') {
-      kegFilter = <KegListStout />;
-    } else if (value === 'lager') {
-      kegFilter = <KegListLager />;
-    } else if (value === 'ipa') {
-      kegFilter = <KegListIPA />;
-    }
+    kegFilter = (
+      <KegListAll
+        filterValue={value}
+        onRemoveKeg={onRemoveKeg}
+        onEditKeg={onEditKeg}
+        allKegsList={allKegsList}
+        allIpaKegsList={allIpaKegsList}
+        allLagerKegsList={allLagerKegsList}
+        allStoutKegsList={allStoutKegsList}
+      />
+    );
     return (
       <div>
         <style jsx>
@@ -80,6 +81,7 @@ class FilterKegsControl extends React.Component {
 FilterKegsControl.propTypes = {
   allKegsList: PropTypes.instanceOf(Array).isRequired,
   onEditKeg: PropTypes.func.isRequired,
+  onRemoveKeg: PropTypes.func.isRequired,
 };
 
 export default FilterKegsControl;

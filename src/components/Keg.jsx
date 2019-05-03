@@ -16,9 +16,24 @@ class Keg extends React.Component {
 
   sellPint() {
     const { pints } = this.state;
+    const {
+      onRemoveKeg,
+      kegId,
+      brewer,
+      price,
+      abv,
+      style,
+    } = this.props;
     this.setState({ pints: pints - 1 });
-    if (pints <= 0) {
-      alert('Keg empty');
+    if (pints < 2) {
+      onRemoveKeg({
+        brewer: { brewer },
+        price: { price },
+        abv: { abv },
+        pintsRemaining: 124,
+        style: { style },
+        id: kegId,
+      });
       this.setState({ pints: 0 });
     }
   }
@@ -27,7 +42,6 @@ class Keg extends React.Component {
     const { pints } = this.state;
     this.setState({ pints: pints - 2 });
     if (pints <= 0) {
-      alert('Keg empty');
       this.setState({ pints: 0 });
     }
   }
@@ -174,7 +188,7 @@ class Keg extends React.Component {
                   type="button"
                   onClick={e => this.showKegEditForm(e)}
                 >
-                  Edit keg
+                  {'Edit keg'}
                 </button>
               </div>
             </div>
@@ -194,6 +208,7 @@ Keg.propTypes = {
   style: PropTypes.string.isRequired,
   kegId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   onEditKegCreation: PropTypes.func.isRequired,
+  onRemoveKeg: PropTypes.func.isRequired,
 };
 
 export default Keg;
