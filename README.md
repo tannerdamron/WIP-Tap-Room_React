@@ -221,7 +221,7 @@ This web application was built with React, and will allow the user, as a tap roo
 
 #### Download Repo
 1. Download and install required software: Node.js, npm
-2. Clone [this repository](https://github.com/tannerdamron/Radar-NetworkingApp-Demo.git): `$ git clone https://github.com/tannerdamron/Tap-Room-React.git`
+2. Clone [this repository](https://github.com/tannerdamron/Tap-Room-React.git): `$ git clone https://github.com/tannerdamron/Tap-Room-React.git`
 
 #### Prepare
 1. Navigate to the application directory: `$ cd Tap-Room-React`
